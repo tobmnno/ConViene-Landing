@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <meta name="description" content="ConViene te ayuda a comparar precios de supermercados y encontrar la mejor forma de armar tu changuito. Probá una demo interactiva con datos de ejemplo." />
+    <title>ConViene — Tu compra, al mejor precio</title>
+    <link rel="icon" href="./assets/conviene_symbol.png" type="image/png" />
+    <link rel="preload" href="./assets/Manrope.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <header class="site-header" id="top">
+      <div class="nav-wrap container">
+        <a class="brand" href="#top" aria-label="ConViene, volver al inicio">
+          <span class="brand-dark"><img src="./assets/conviene_symbol.png" alt="" />ConViene</span>
+        </a>
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#supermercados">Supermercados</a>
+          <a href="#preguntas">Preguntas</a>
+          <a class="nav-cta" href="#demo">Probar demo <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activar modo oscuro" title="Cambiar tema"><span aria-hidden="true">◐</span></button>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> Elegí mejor cada compra</div>
+            <h1 id="hero-title">Tu compra, <span>al mejor precio.</span></h1>
+            <p class="hero-lead">Buscá productos, compará supermercados y descubrí cómo armar el changuito que más te conviene.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#demo">Probar demo <span aria-hidden="true">→</span></a>
+              <a class="button button-secondary" href="#como-funciona">Cómo funciona <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="hero-note"><span aria-hidden="true">✦</span> Explorá una compra de ejemplo, sin registrarte.</p>
+          </div>
+            <div class="hero-visual" aria-label="Vista representativa de la app ConViene">
+            <div class="hero-halo" aria-hidden="true"></div>
+            <div class="float-pill float-pill-top"><span class="pill-icon blue"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.6 15.6 4.7 4.7"/></svg></span><span>Compará en un lugar</span></div>
+            <div class="phone-shell">
+              <div class="phone-top"><span></span></div>
+              <div class="phone-screen" id="phone-screen"></div>
+              <div class="phone-home" aria-hidden="true"></div>
+            </div>
+            <div class="float-pill float-pill-bottom"><span class="pill-icon green">✓</span><span>Encontrá tu mejor opción</span></div>
+            <div class="phone-progress" id="phone-progress" aria-label="Progreso de la demostración visual"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stores-section section" id="supermercados" aria-labelledby="stores-title">
+        <div class="container">
+          <div class="section-intro centered reveal">
+            <span class="section-kicker">TODO EN UN MISMO LUGAR</span>
+            <h2 id="stores-title">Una lista. Más opciones para comparar.</h2>
+            <p>ConViene reúne precios de distintas cadenas para que puedas mirar tu compra completa con más claridad.</p>
+          </div>
+          <div class="store-grid" id="store-grid"></div>
+          <p class="store-note">Los nombres y logos identifican las fuentes de precios. ConViene no representa a estas cadenas ni implica una asociación comercial.</p>
+        </div>
+      </section>
+
+      <section class="how-section section" id="como-funciona" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section-intro reveal">
+            <span class="section-kicker">ASÍ DE SIMPLE</span>
+            <h2 id="how-title">De tu lista a una mejor decisión.</h2>
+            <p>ConViene te muestra las opciones sin perder de vista lo que querés comprar.</p>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card reveal"><span class="step-number">01</span><div class="step-visual search-visual"><span class="visual-search-icon"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.6 15.6 4.7 4.7"/></svg></span><span>Buscar leche entera 1 L</span><span class="visual-arrow">→</span></div><h3>Buscá productos</h3><p>Encontrá lo que necesitás y revisá marca, presentación y precios disponibles.</p></article>
+            <article class="step-card reveal"><span class="step-number">02</span><div class="step-visual cart-visual"><img class="tiny-product-image" src="./assets/products/leche.jpg" alt="" /><span>Leche entera 1 L</span><span class="mini-plus">+</span></div><h3>Armá tu changuito</h3><p>Sumá artículos, cambiá cantidades y conservá toda la compra en una sola lista.</p></article>
+            <article class="step-card reveal"><span class="step-number">03</span><div class="step-visual compare-visual"><span>Coto</span><span class="visual-bar"></span><strong>Mejor mix ✓</strong></div><h3>Compará y elegí</h3><p>Mirá totales por supermercado y la combinación más económica por producto.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section section" id="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <div class="demo-head reveal">
+            <div class="section-intro"><span class="section-kicker">PROBALO VOS</span><h2 id="demo-title">ConViene, en tus manos.</h2><p>Explorá una compra de ejemplo y descubrí qué cambia cuando comparás.</p></div>
+            <div class="demo-data-note"><span class="note-spark" aria-hidden="true">✳</span><span><strong>Demo interactiva</strong><small>Todos los precios son simulados.</small></span></div>
+          </div>
+          <div class="demo-frame reveal">
+            <div class="demo-toolbar">
+              <div class="demo-brand"><span class="brand-icon"></span><span>ConViene <b>demo</b></span></div>
+              <div class="mode-switch" role="group" aria-label="Modo de demostración"><button type="button" id="guided-mode" class="active" aria-pressed="true">Recorrido guiado</button><button type="button" id="free-mode" aria-pressed="false">Explorar libremente</button></div>
+              <button type="button" class="reset-button" id="reset-demo" title="Reiniciar demo"><span aria-hidden="true">↺</span><span>Reiniciar</span></button>
+            </div>
+            <div class="demo-experience">
+              <div class="demo-explainer"><span class="demo-eyebrow">ASÍ SE VE EN TU CELULAR</span><h3>Probá la app desde acá.</h3><p>Buscá un producto, abrí su comparación, elegí el supermercado y seguí con el changuito.</p><div class="guide-panel" id="guide-panel"></div><p class="demo-helper">La interfaz reproduce el recorrido de la app con productos reales y precios de ejemplo. Los enlaces oficiales se muestran como en ConViene.</p></div>
+              <div class="demo-phone" aria-label="Simulación interactiva de ConViene en un celular">
+                <div class="demo-phone-bezel"><div class="demo-phone-camera" aria-hidden="true"></div>
+                  <div class="demo-phone-screen">
+                    <div class="demo-status" aria-hidden="true"><span>9:41</span><span>▰ ▰ ▰  100%</span></div>
+                    <div class="demo-app-header"><span class="brand-icon"></span><strong>ConViene</strong><span class="demo-header-action" aria-hidden="true">♡</span></div>
+                    <div class="demo-scroll">
+                      <section class="demo-view" id="demo-catalog" aria-label="Búsqueda de productos">
+                        <div class="demo-panel-head"><div><span class="demo-label">RESULTADOS</span><h3>¿Qué querés comprar?</h3></div><span class="catalog-count" id="catalog-count"></span></div>
+                        <label class="search-field"><span class="search-field-icon" aria-hidden="true"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.6 15.6 4.7 4.7"/></svg></span><span class="sr-only">Buscar productos de ejemplo</span><input id="product-search" type="search" placeholder="Buscar producto..." autocomplete="off" /></label>
+                        <div class="store-filter-head"><span>Supermercados</span><button type="button" id="select-all-stores">Seleccionar todos</button></div>
+                        <div class="store-filters" id="store-filters" role="group" aria-label="Filtrar supermercados"></div>
+                        <div class="product-list" id="product-list"></div>
+                      </section>
+                      <section class="demo-view" id="demo-detail" aria-label="Detalle y comparación del producto" hidden></section>
+                      <section class="demo-view" id="demo-cart-panel" aria-label="Mi changuito" hidden>
+                        <div class="demo-panel-head"><div><span class="demo-label">TU COMPRA</span><h3>Mi changuito <span id="cart-count" class="cart-count">0</span></h3></div><button type="button" class="clear-cart" id="clear-cart">Vaciar</button></div>
+                        <div id="cart-list" class="cart-list" aria-live="polite"></div>
+                        <div class="comparison" id="comparison"></div>
+                      </section>
+                    </div>
+                    <nav class="demo-bottom-nav" aria-label="Navegación de la demo"><button type="button" data-view="search" class="active"><span aria-hidden="true"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.6 15.6 4.7 4.7"/></svg></span>Buscar</button><button type="button" data-view="cart"><span aria-hidden="true">▣</span>Changuito <span id="nav-cart-count">0</span></button></nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-footer"><span><span class="demo-dot"></span> Precios simulados. Fotos de productos reales.</span><span>Sin registro · La demo no abre fichas externas</span></div>
+          </div>
+          <p class="sr-only" id="demo-announcement" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="features-section section" aria-labelledby="features-title">
+        <div class="container features-grid">
+          <div class="features-copy reveal"><span class="section-kicker">MÁS CLARIDAD, MENOS VUELTAS</span><h2 id="features-title">Los detalles que cambian una compra.</h2><p>Armá tu lista una vez. ConViene compara cuánto costaría comprarla completa en cada supermercado y también calcula si te conviene repartir los productos entre distintas tiendas.</p><a class="text-link" href="#demo">Explorar la demo <span aria-hidden="true">→</span></a></div>
+          <div class="feature-list"><article class="feature-row reveal"><span class="feature-icon">↔</span><div><h3>El mismo producto, lado a lado</h3><p>Consultá los precios de un artículo en distintas cadenas, con su marca y presentación, antes de sumarlo al changuito.</p></div></article><article class="feature-row reveal"><span class="feature-icon">▣</span><div><h3>Tu changuito completo en cada súper</h3><p>Ves el total de todos los productos y cantidades de tu lista en cada supermercado. Si falta un artículo, ese subtotal aparece como parcial.</p></div></article><article class="feature-row reveal"><span class="feature-icon">⌁</span><div><h3>La mejor combinación entre tiendas</h3><p>También podés ver una compra repartida: por ejemplo, arroz en La Gallega y fideos en Carrefour si ahí están más baratos, con el detalle de qué comprar en cada lugar.</p></div></article><article class="feature-row reveal"><span class="feature-icon">✳</span><div><h3>Beneficios con sus condiciones</h3><p>Cuando hay datos disponibles y verificados, la app muestra promociones y medios de pago aplicables para que sepas de dónde sale el precio final.</p></div></article></div>
+        </div>
+      </section>
+
+      <section class="example-section section" aria-labelledby="example-title"><div class="container example-grid"><div class="example-panel reveal"><div class="example-top"><span>Una lista de ejemplo</span><span>2 productos · 3 unidades</span></div><div class="example-item"><img class="example-product-image" src="./assets/products/leche.jpg" alt="" /><span>Leche entera La Serenísima <small>2 unidades · 1 L</small></span></div><div class="example-item"><img class="example-product-image" src="./assets/products/arroz.jpg" alt="" /><span>Arroz Gallo largo fino <small>1 unidad · 1 kg</small></span></div><div class="example-total"><span>Compra completa en Carrefour</span><strong>$ 4.600</strong></div><div class="example-total best"><span>Combinando supermercados</span><strong>$ 4.300</strong></div><div class="example-breakdown">2 leches en Carrefour: $ 2.600<br />1 arroz en Coto: $ 1.700</div><div class="example-saving">Diferencia en estos precios de ejemplo: <strong>$ 300</strong>.</div></div><div class="example-copy reveal"><span class="section-kicker">EL RESULTADO, EXPLICADO</span><h2 id="example-title">Sabé de dónde sale cada peso.</h2><p>ConViene calcula el total de tu changuito completo en cada supermercado, para que veas cuánto pagarías si resolvés toda la compra en un solo lugar.</p><p>Además, te muestra la opción de elegir el precio más bajo de cada producto aunque estén en tiendas distintas. En este ejemplo, las dos leches salen $ 2.600 en Carrefour y el arroz $ 1.700 en Coto: juntos suman $ 4.300, frente a $ 4.600 por comprar todo en Carrefour.</p><span class="example-caption">Precios ilustrativos. Al combinar tiendas, tené en cuenta traslados o envíos, que no están incluidos en esta comparación.</span></div></div></section>
+
+      <section class="faq-section section" id="preguntas" aria-labelledby="faq-title"><div class="container faq-grid"><div class="section-intro reveal"><span class="section-kicker">PREGUNTAS FRECUENTES</span><h2 id="faq-title">Antes de llenar el changuito.</h2><p>Cómo compara ConViene tu lista y qué significa cada resultado.</p></div><div class="faq-list reveal">
+        <details><summary>¿Cómo compara mi changuito?</summary><p>Sumás productos y cantidades a una lista. ConViene calcula el total de esa compra en cada supermercado; si una tienda no tiene algún producto, te muestra un subtotal parcial para que no lo confundas con una compra completa.</p></details>
+        <details><summary>¿Qué significa «mejor combinación»?</summary><p>Es la suma del menor precio disponible para cada producto, aunque haya que comprar en distintas cadenas. Te indica qué artículo comprar en cada una; conviene considerar también el tiempo de viaje o los costos de envío.</p></details>
+        <details><summary>¿De dónde salen los precios?</summary><p>La app consulta fuentes de supermercados. Los importes pueden cambiar por sucursal, disponibilidad, promociones o momento de consulta, así que verificá el precio final antes de comprar.</p></details>
+        <details><summary>¿ConViene tiene en cuenta promociones y medios de pago?</summary><p>La app muestra beneficios cuando cuenta con información disponible y condiciones verificadas. Revisá siempre la vigencia, los topes y el medio de pago requerido.</p></details>
+        <details><summary>¿Esta página muestra toda la app?</summary><p>No. La demo del navegador usa productos reales y precios simulados para mostrar el recorrido principal. La app también incluye otras funciones, como escanear códigos, favoritos, cuenta, beneficios y promociones.</p></details>
+      </div></div></section>
+
+      <section class="closing-section section"><div class="container closing-card reveal"><div class="closing-glow" aria-hidden="true"></div><span class="closing-logo"><img src="./assets/conviene_symbol.png" alt="ConViene" /></span><h2>Una compra más clara empieza acá.</h2><p>Probá la demo, armá tu lista y descubrí cómo ConViene te ayuda a comparar.</p><a class="button button-light" href="#demo">Probar demo <span aria-hidden="true">↑</span></a></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="#top" aria-label="ConViene, volver al inicio"><span class="brand-dark"><img src="./assets/conviene_symbol.png" alt="" />ConViene</span></a><p>Tu compra, al mejor precio.</p></div><nav aria-label="Enlaces del pie"><a href="#como-funciona">Cómo funciona</a><a href="#demo">Demo</a><a href="#preguntas">Preguntas frecuentes</a></nav><p class="footer-disclaimer">La demo usa precios simulados. Las marcas de supermercados identifican fuentes de consulta y no implican acuerdos comerciales.</p></div><div class="container footer-bottom"><span>© <span id="year"></span> ConViene</span><span>Hecho para decidir mejor.</span></div></footer>
+  </body>
+</html>

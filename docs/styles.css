@@ -92,3 +92,104 @@
 .example-copy p+p{margin-top:10px}
 .feature-row p{font-size:12px;line-height:1.7}
 [data-theme="dark"] .example-breakdown{background:#1a2c46;border-color:#34445a;color:#c4d5ea}
+
+/* La demo ocupa más espacio en escritorio para que la app se pueda leer. */
+@media (min-width:901px){
+  .demo-experience{grid-template-columns:minmax(260px,1fr) minmax(440px,1fr);min-height:930px;padding:48px 58px;gap:36px}
+  .demo-phone-bezel{zoom:1.18}
+}
+@media (min-width:601px) and (max-width:900px){.demo-phone-bezel{zoom:1.08}}
+@media (max-width:600px){.demo-phone-bezel{width:min(350px,calc(100vw - 46px))}}
+@media (max-width:390px){.demo-phone-bezel{width:min(320px,calc(100vw - 38px))}}
+
+/* Textos secundarios y navegación claros en el tema oscuro. */
+[data-theme="dark"] .main-nav>a:not(.nav-cta){color:#dce9fb}
+[data-theme="dark"] .main-nav>a:not(.nav-cta):hover{color:#91bbff}
+[data-theme="dark"] .demo-eyebrow,[data-theme="dark"] .section-kicker,[data-theme="dark"] .guide-text>span{color:#91bbff}
+[data-theme="dark"] .demo-helper,[data-theme="dark"] .guide-text p,[data-theme="dark"] .demo-explainer>p,[data-theme="dark"] .demo-footer{color:#d2e0f2}
+[data-theme="dark"] .demo-phone .comparison-row.best-complete .comparison-name strong,[data-theme="dark"] .demo-phone .comparison-row.best-complete .comparison-amount strong{color:#8ff0b9}
+
+/* Recorrido de la landing: fuentes, problema, pasos, demo y resultado. */
+.store-marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);padding:12px 0 22px}
+.store-marquee-track{display:flex;width:max-content;animation:stores-drift 28s linear infinite;will-change:transform}
+.store-marquee:hover .store-marquee-track,.store-marquee:focus-within .store-marquee-track{animation-play-state:paused}
+.store-marquee-group{display:flex;gap:14px;padding-right:14px;flex:none}
+.store-marquee .store-card{width:178px;min-width:178px}
+@keyframes stores-drift{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.store-note{font-size:12px;color:var(--muted);margin-top:12px}
+.problem-section{background:#edf4ff;padding:82px 0}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px}
+.problem-copy h2{font-size:clamp(32px,3.5vw,47px);line-height:1.16;letter-spacing:-.05em;margin:15px 0 19px;max-width:590px}
+.problem-copy p{color:var(--muted);font-size:15px;line-height:1.75;max-width:560px;margin:0 0 13px}
+.problem-visual{display:flex;align-items:center;gap:10px;padding:27px;border:1px solid #dbe8fb;border-radius:24px;background:#fff;box-shadow:var(--shadow)}
+.problem-mini{min-width:0;flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 16px;border-radius:16px;background:#f2f5fa;min-height:170px;justify-content:center}
+.problem-mini span{font-size:10px;letter-spacing:.12em;font-weight:850;color:#667085}
+.problem-mini strong{font-size:21px;letter-spacing:-.04em;line-height:1.2}
+.problem-mini small{font-size:12px;line-height:1.5;color:#667085}
+.problem-mini-final{background:#e8f6ef;border:1px solid #b9e8cf}
+.problem-mini-final span,.problem-mini-final strong{color:#087b48}
+.problem-arrow{font-size:25px;color:var(--blue);font-weight:800}
+.how-section{padding:88px 0 98px}
+[data-theme="dark"] .problem-section{background:#122238}
+[data-theme="dark"] .problem-visual{background:#17283f;border-color:#34445a}
+[data-theme="dark"] .problem-mini{background:#22344c}
+[data-theme="dark"] .problem-mini-final{background:#143328;border-color:#275d44}
+[data-theme="dark"] .problem-mini span,[data-theme="dark"] .problem-mini small{color:#c8d7e8}
+[data-theme="dark"] .problem-mini-final span,[data-theme="dark"] .problem-mini-final strong{color:#8ff0b9}
+[data-theme="dark"] .problem-arrow{color:#91bbff}
+@media(max-width:800px){.problem-grid{grid-template-columns:1fr;gap:28px}.problem-section{padding:72px 0}.problem-visual{max-width:620px}}
+@media(max-width:600px){.store-marquee .store-card{width:145px;min-width:145px;min-height:96px}.store-note{font-size:11px}.problem-copy p{font-size:14px}.problem-visual{padding:13px;gap:6px}.problem-mini{min-height:145px;padding:15px 10px}.problem-mini strong{font-size:16px}.problem-mini small{font-size:10px}.problem-mini span{font-size:8px}.problem-arrow{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.store-marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.store-marquee-track{animation:none}.store-marquee-group[aria-hidden="true"]{display:none}}
+[data-theme="dark"] .step-visual{color:#dce9fb}
+[data-theme="dark"] .search-visual>span:nth-child(2){border-color:#5a7392;color:#e7f1ff}
+[data-theme="dark"] .compare-visual strong{color:#8ff0b9}
+
+/* Seis supermercados fijos, en dos filas dentro de las pantallas del celular. */
+.hero-phone-stores,.hero-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:11px}
+.hero-store-item,.hero-offer{min-width:0;min-height:37px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#f6f9fe;border:1px solid #edf1f7}
+.hero-phone-stores .store-logo,.hero-offers .store-logo{width:52px;height:29px;max-width:100%;margin:0;padding:0}
+.hero-phone-stores .store-logo.green,.hero-phone-stores .store-logo.reina,.hero-phone-stores .store-logo.red,.hero-offers .store-logo.green,.hero-offers .store-logo.reina,.hero-offers .store-logo.red{width:30px;height:29px;padding:1px;margin:0}
+.hero-offers{padding:8px;margin-top:9px}
+.hero-offers .hero-offer{flex-direction:column;gap:4px;min-height:57px;padding:4px 1px;border:0}
+.hero-offers .hero-offer strong{font-size:9px;white-space:nowrap;color:#102a56}
+[data-theme="dark"] .hero-store-item,[data-theme="dark"] .hero-offer{background:#22344c;border-color:#34445a}
+[data-theme="dark"] .hero-offers .hero-offer strong{color:#edf5ff}
+
+/* Transiciones suaves entre las superficies de cada sección. */
+.stores-section{background:linear-gradient(180deg,#edf5ff 0,var(--surface) 88px)}
+.problem-section{background:linear-gradient(180deg,var(--surface) 0,#edf4ff 90px)}
+.how-section{background:linear-gradient(180deg,#edf4ff 0,var(--bg) 90px)}
+.demo-section{background:linear-gradient(180deg,var(--bg) 0,#eaf3ff 96px,#f7f9fc 55%)}
+.example-section{background:linear-gradient(180deg,#f7f9fc 0,#f1f6ff 90px)}
+.faq-section{background:linear-gradient(180deg,#f1f6ff 0,var(--surface) 90px)}
+[data-theme="dark"] .stores-section{background:linear-gradient(180deg,#13253e 0,var(--surface) 88px)}
+[data-theme="dark"] .problem-section{background:linear-gradient(180deg,var(--surface) 0,#122238 90px)}
+[data-theme="dark"] .how-section{background:linear-gradient(180deg,#122238 0,var(--bg) 90px)}
+[data-theme="dark"] .demo-section{background:linear-gradient(180deg,var(--bg) 0,#17283f 96px,#0c1420 55%)}
+[data-theme="dark"] .example-section{background:linear-gradient(180deg,#0c1420 0,#13233b 90px)}
+[data-theme="dark"] .faq-section{background:linear-gradient(180deg,#13233b 0,var(--surface) 90px)}
+
+/* Movimiento discreto para acompañar la lectura. */
+.hero-orb-one{animation:orb-breathe 12s ease-in-out infinite alternate}
+.hero-orb-two{animation:orb-breathe 16s ease-in-out infinite alternate-reverse}
+@keyframes orb-breathe{to{transform:translate(18px,-14px) scale(1.08)}}
+.steps-grid .step-card:nth-child(2){transition-delay:.1s}
+.steps-grid .step-card:nth-child(3){transition-delay:.2s}
+.problem-visual.visible .problem-mini-final{animation:solution-arrive .7s .2s both}
+@keyframes solution-arrive{from{transform:translateX(-10px);opacity:.55}to{transform:none;opacity:1}}
+.example-panel.visible .example-item{animation:item-arrive .45s both}
+.example-panel.visible .example-item:nth-of-type(2){animation-delay:.1s}
+.example-panel.visible .example-item:nth-of-type(3){animation-delay:.2s}
+.example-panel.visible .example-item:nth-of-type(4){animation-delay:.3s}
+.example-panel.visible .example-item:nth-of-type(5){animation-delay:.4s}
+@keyframes item-arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.button span[aria-hidden="true"]{transition:transform .2s ease}
+.button:hover span[aria-hidden="true"]{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.hero-orb-one,.hero-orb-two,.problem-visual.visible .problem-mini-final,.example-panel.visible .example-item{animation:none!important}.steps-grid .step-card{transition-delay:0s}}
+
+/* La demo anticipa qué se suma a la lista y explica cambios de filtros. */
+.guide-preview{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.guide-text .guide-preview span{letter-spacing:0;font-size:10px;color:#175cd3;background:#fff;border:1px solid #cfe0f8;border-radius:7px;padding:5px 7px}
+.cart-notice{font-size:10px;line-height:1.5;color:#17518e;background:#eaf3ff;border:1px solid #d3e3fa;border-radius:8px;padding:9px 10px;margin:0 0 9px}
+[data-theme="dark"] .guide-text .guide-preview span{color:#cfe2ff;background:#223a5c;border-color:#476585}
+[data-theme="dark"] .cart-notice{color:#d6e9ff;background:#1c3655;border-color:#365575}
